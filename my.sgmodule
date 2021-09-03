@@ -2,11 +2,16 @@
 #!desc = FION远程脚本
 
 [MITM]
-hostname = ms.jr.jd.com, me-api.jd.com, api.m.jd.com
+hostname = ms.jr.jd.com, me-api.jd.com, api.m.jd.com, music.163.com
 
 [Script]
 获取京东Cookie = type=http-request,requires-body=1,pattern=^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?),script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
-京东多合一签到 = type=cron,cronexp=4 0 * * *,wake-system=1,timeout=60,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+获取网易云Cookie = type=http-request,requires-body=1,pattern=^https:\/\/music.163.com\/weapi\/user\/level,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js
+
+京东多合一签到 = type=cron,cronexp=12 15 */12 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+网易云签到 = type=cron,cronexp=26 10 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js
+
+
 
 
 
