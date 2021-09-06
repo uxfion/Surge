@@ -5,8 +5,8 @@
 force-http-engine-hosts = *91*:8080, *my10api*:8080
 
 [Rule]
-DOMAIN-KEYWORD,*91*,DIRECT
-DOMAIN-KEYWORD,*my10api*,DIRECT
+DOMAIN-KEYWORD,91,DIRECT
+DOMAIN-KEYWORD,my10api,DIRECT
 
 [Script]
 http-response ^https?:\/\/.+?\.(my10api|(.*91.*))\.(com|tips|app|xyz)(:\d{2,5}|)\/api.php$ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/91.js
